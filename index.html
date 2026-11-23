@@ -41,7 +41,7 @@
     <div id="restaurant-info" class="grid grid-cols-2 lg:flex lg:justify-between text-xs text-stone-400"></div>
 
     <!-- TODO: the restaurant name — make it HUGE -->
-    <h1 id="restaurant-name" class=" text-xl lg: text-9xl font-bold mt-4"></h1>
+    <h1 id="restaurant-name" class=" text-xl lg:text-9xl font-bold mt-4"></h1>
 
     <!-- TODO: the tagline — italic serif, accent color -->
     <p id="tagline" class="font-serif text-xl lg:text-4xl text-orange-700"></p>
@@ -58,26 +58,16 @@
   <!-- ===== MENU ===== -->
   <!-- One <section> per category goes in here (from the API) -->
   <main id="menu">
-     <!-- <h3  class="flex  text-3xl lg:text-5xl mt-3 font-bold p-2">BOOT UP</h3> -->
-    <div id="boot-up-grid" class=" max-w-7xl p-2 grid grid-cols-1 lg:grid-cols-3"></div>
     
-    <!-- <h3  class="flex p-2 text-3xl lg:text-5xl mt-3 font-bold" >MAIN FUNCTIONS</h3> -->
-    <div id="main-functions" class=" max-w-7xl p-2 grid grid-cols-1 lg:grid-cols-3"></div>
-   
-    <!-- <h3  class="flex p-2 text-3xl lg:text-5xl mt-3 font-bold" >SWEET SYNTAX</h3> -->
-    <div id="sweet-syntax" class=" max-w-7xl p-2 grid grid-cols-1 lg:grid-cols-3"></div>
-   
-    <!-- <h3  class="flex p-2 text-3xl lg:text-5xl mt-3 font-bold">FUEL</h3> -->
-   <div id="fuel" class=" max-w-7xl p-2 grid grid-cols-1 lg:grid-cols-3"></div>
     <p id="status">Loading the menu…</p>
     
     
   </main>
 
   <!-- ===== FOOTER ===== -->
-  <footer>
+  <footer class="bg-stone-900 text-white p-12">
     <p id="footer-name"></p>
-    <p id="footer-info"></p>
+    <p id="footer-info" class="lg:flex gap-2"></p>
   </footer>
 
   <script src="script.js" type="module"></script>
