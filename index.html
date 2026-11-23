@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+
+  <!-- Fonts (already set up for you) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;900&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind (already set up for you) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // This lets you use the classes `font-sans` (Inter Tight) and `font-serif` (Instrument Serif)
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Inter Tight"', 'sans-serif'],
+            serif: ['"Instrument Serif"', 'serif'],
+          },
+        },
+      },
+    };
+   
+  </script>
+</head>
+
+<!-- TODO: give the body a background color, text color and font -->
+
+<body class="bg-stone-100 text-stone-900 font-sans-serif ">
+
+  <!-- ===== HEADER ===== -->
+  <header class="p-4">
+    <!-- TODO: address, hours and phone go here (from the API) -->
+    <div id="restaurant-info" class="grid grid-cols-2 lg:flex lg:justify-between text-xs text-stone-400"></div>
+
+    <!-- TODO: the restaurant name — make it HUGE -->
+    <h1 id="restaurant-name" class=" text-xl lg: text-9xl font-bold mt-4"></h1>
+
+    <!-- TODO: the tagline — italic serif, accent color -->
+    <p id="tagline" class="font-serif text-xl lg:text-4xl text-orange-700"></p>
+  </header>
+
+  <!-- ===== CATEGORY NAV ===== -->
+  <!-- TODO: make the nav stick to the top of the screen when you scroll -->
+  <div class="grid border border-slate-700 p-2 ">
+    <nav>
+      <!-- One link per category goes in here (from the API) -->
+      <ul id="category-nav" class="flex gap-2 px-3"></ul>
+    </nav>
+  </div>
+  <!-- ===== MENU ===== -->
+  <!-- One <section> per category goes in here (from the API) -->
+  <main id="menu">
+     <!-- <h3  class="flex  text-3xl lg:text-5xl mt-3 font-bold p-2">BOOT UP</h3> -->
+    <div id="boot-up-grid" class=" max-w-7xl p-2 grid grid-cols-1 lg:grid-cols-3"></div>
+    
+    <!-- <h3  class="flex p-2 text-3xl lg:text-5xl mt-3 font-bold" >MAIN FUNCTIONS</h3> -->
+    <div id="main-functions" class=" max-w-7xl p-2 grid grid-cols-1 lg:grid-cols-3"></div>
+   
+    <!-- <h3  class="flex p-2 text-3xl lg:text-5xl mt-3 font-bold" >SWEET SYNTAX</h3> -->
+    <div id="sweet-syntax" class=" max-w-7xl p-2 grid grid-cols-1 lg:grid-cols-3"></div>
+   
+    <!-- <h3  class="flex p-2 text-3xl lg:text-5xl mt-3 font-bold">FUEL</h3> -->
+   <div id="fuel" class=" max-w-7xl p-2 grid grid-cols-1 lg:grid-cols-3"></div>
+    <p id="status">Loading the menu…</p>
+    
+    
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p id="footer-name"></p>
+    <p id="footer-info"></p>
+  </footer>
+
+  <script src="script.js" type="module"></script>
+</body>
+
+</html>
