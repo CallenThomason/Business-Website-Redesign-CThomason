@@ -28,10 +28,10 @@ const showItem = async () => {
         const categories = await categoryFetch();
 
         categories.forEach(async (category) => {
-            const card = document.createElement("div");
-            const categoryHeader = document.createElement("div");
-            const categoryName = document.createElement("h3");
-            const categoryNum = document.createElement("h3");
+            const card = document.createElement("article");
+            const categoryHeader = document.createElement("h3");
+            const categoryName = document.createElement("div");
+            const categoryNum = document.createElement("div");
             categoryName.textContent = category.name;
             categoryNum.textContent = `0${category.id}`;
             categoryNum.className = "text-orange-700 font-serif ";
@@ -53,6 +53,8 @@ const showItem = async () => {
                 const itemName = document.createElement("p");
                 itemName.textContent = item.name;
 
+               const itemBorder = document.createElement("span");
+               itemBorder.className = "flex-1 border-t  border-stone-200 "
 
                 const itemPrice = document.createElement("p");
                 itemPrice.textContent = `$${item.price}.00`;
@@ -61,7 +63,7 @@ const showItem = async () => {
                 const itemDescription = document.createElement("p");
                 itemDescription.textContent = item.description;
 
-                const itemTag = document.createElement("a");
+                const itemTag = document.createElement("p");
                 itemTag.textContent = item.tag;
 
                 const itemImg = document.createElement("img");
@@ -73,19 +75,19 @@ const showItem = async () => {
                 imgDiv.appendChild(itemImg);
 
                 itemDiv.appendChild(itemName);
-
+                itemDiv.appendChild(itemBorder); 
 
                 itemDiv.appendChild(itemPrice);
                 desDiv.appendChild(itemDescription);
                 tagDiv.appendChild(itemTag);
-                const square = document.createElement("div")
+                const square = document.createElement("article")
                 square.appendChild(imgDiv);
 
                 square.appendChild(itemDiv);
                 square.appendChild(desDiv);
                 square.appendChild(tagDiv);
 
-                itemDiv.className = "flex flex-wrap justify-between p-2 font-semibold text-2xl";
+                itemDiv.className = "flex flex-wrap items-center justify-between p-2 font-semibold text-2xl ";
                 desDiv.className = "flex flex-wrap justify-between p-2 text-stone-600";
                 tagDiv.className = "border border-slate-700 p-2 rounded-3xl font-semibold w-fit bg-stone-200 text-stone-600";
 
@@ -120,12 +122,13 @@ const showCategory = async () => {
         categories.forEach((category) => {
             const categoryName = document.createElement("button");
             categoryName.textContent = category.name;
-            categoryName.className = "border border-slate-700 p-2 rounded-3xl font-semibold";
+            categoryName.className = " border border-slate-700 p-3 rounded-3xl font-semibold";
             categoryName.addEventListener("click", function () {
                 console.log("running");
                 document.getElementById(category.id).scrollIntoView({ behavior: "smooth" });
             });
             cateNav.appendChild(categoryName);
+            
         });
     } catch (error) {
         menuStatus.textContent = "Could not load Categories. Check the console. ";
